@@ -96,6 +96,7 @@
             this.prizeAmountValue.Name = "prizeAmountValue";
             this.prizeAmountValue.Size = new System.Drawing.Size(227, 35);
             this.prizeAmountValue.TabIndex = 22;
+            this.prizeAmountValue.Text = "0";
             // 
             // prizeAmountLabel
             // 
@@ -115,6 +116,7 @@
             this.prizePercentageValue.Name = "prizePercentageValue";
             this.prizePercentageValue.Size = new System.Drawing.Size(227, 35);
             this.prizePercentageValue.TabIndex = 24;
+            this.prizePercentageValue.Text = "0";
             // 
             // prizePercentageLabel
             // 
@@ -142,6 +144,7 @@
             this.createPrizeBtn.TabIndex = 26;
             this.createPrizeBtn.Text = "Create Prize";
             this.createPrizeBtn.UseVisualStyleBackColor = true;
+            this.createPrizeBtn.Click += new System.EventHandler(this.createPrizeBtn_Click);
             // 
             // orLabel
             // 
@@ -150,16 +153,16 @@
             this.orLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.orLabel.Location = new System.Drawing.Point(202, 343);
             this.orLabel.Name = "orLabel";
-            this.orLabel.Size = new System.Drawing.Size(68, 37);
+            this.orLabel.Size = new System.Drawing.Size(75, 37);
             this.orLabel.TabIndex = 27;
-            this.orLabel.Text = "-Or-";
+            this.orLabel.Text = "-OR-";
             this.orLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // CreatePrizeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 1038);
+            this.ClientSize = new System.Drawing.Size(533, 582);
             this.Controls.Add(this.orLabel);
             this.Controls.Add(this.createPrizeBtn);
             this.Controls.Add(this.prizePercentageValue);
