@@ -46,45 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreatePrizeForm.cs">
+    <Compile Include="Forms\CreatePrizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreatePrizeForm.Designer.cs">
+    <Compile Include="Forms\CreatePrizeForm.Designer.cs">
       <DependentUpon>CreatePrizeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateTeamForm.cs">
+    <Compile Include="Forms\CreateTeamForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateTeamForm.Designer.cs">
+    <Compile Include="Forms\CreateTeamForm.Designer.cs">
       <DependentUpon>CreateTeamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateTournamentForm.cs">
+    <Compile Include="Forms\CreateTournamentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateTournamentForm.Designer.cs">
+    <Compile Include="Forms\CreateTournamentForm.Designer.cs">
       <DependentUpon>CreateTournamentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TournamentDashboardForm.cs">
+    <Compile Include="Forms\TournamentDashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentDashboardForm.Designer.cs">
+    <Compile Include="Forms\TournamentDashboardForm.Designer.cs">
       <DependentUpon>TournamentDashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TournamentViewerForm.cs">
+    <Compile Include="Forms\TournamentViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentViewerForm.Designer.cs">
+    <Compile Include="Forms\TournamentViewerForm.Designer.cs">
       <DependentUpon>TournamentViewerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreatePrizeForm.resx">
+    <EmbeddedResource Include="Forms\CreatePrizeForm.resx">
       <DependentUpon>CreatePrizeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateTeamForm.resx">
+    <EmbeddedResource Include="Forms\CreateTeamForm.resx">
       <DependentUpon>CreateTeamForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateTournamentForm.resx">
+    <EmbeddedResource Include="Forms\CreateTournamentForm.resx">
       <DependentUpon>CreateTournamentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -96,10 +96,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TournamentDashboardForm.resx">
+    <EmbeddedResource Include="Forms\TournamentDashboardForm.resx">
       <DependentUpon>TournamentDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TournamentViewerForm.resx">
+    <EmbeddedResource Include="Forms\TournamentViewerForm.resx">
       <DependentUpon>TournamentViewerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
