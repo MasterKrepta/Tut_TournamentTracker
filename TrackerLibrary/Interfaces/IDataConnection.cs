@@ -13,5 +13,6 @@ namespace TrackerLibrary
         PersonModel CreatePerson(PersonModel model);
 
         List<PersonModel> GetPerson_All();
+        TeamModel CreateTeam(TeamModel model);
     }
 }

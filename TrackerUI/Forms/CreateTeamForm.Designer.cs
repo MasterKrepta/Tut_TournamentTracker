@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tournamentNameValue = new System.Windows.Forms.TextBox();
+            this.teamNameValue = new System.Windows.Forms.TextBox();
             this.teamNameLabel = new System.Windows.Forms.Label();
             this.headerLabel = new System.Windows.Forms.Label();
             this.selectTeamDropdown = new System.Windows.Forms.ComboBox();
@@ -50,12 +50,12 @@
             this.addNewMemberBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tournamentNameValue
+            // teamNameValue
             // 
-            this.tournamentNameValue.Location = new System.Drawing.Point(38, 125);
-            this.tournamentNameValue.Name = "tournamentNameValue";
-            this.tournamentNameValue.Size = new System.Drawing.Size(462, 35);
-            this.tournamentNameValue.TabIndex = 13;
+            this.teamNameValue.Location = new System.Drawing.Point(38, 125);
+            this.teamNameValue.Name = "teamNameValue";
+            this.teamNameValue.Size = new System.Drawing.Size(462, 35);
+            this.teamNameValue.TabIndex = 13;
             // 
             // teamNameLabel
             // 
@@ -264,6 +264,7 @@
             this.createTeamBtn.TabIndex = 25;
             this.createTeamBtn.Text = "Create Team";
             this.createTeamBtn.UseVisualStyleBackColor = true;
+            this.createTeamBtn.Click += new System.EventHandler(this.createTeamBtn_Click);
             // 
             // CreateTeamForm
             // 
@@ -278,7 +279,7 @@
             this.Controls.Add(this.addMemberBtn);
             this.Controls.Add(this.selectTeamDropdown);
             this.Controls.Add(this.selectTeamLabel);
-            this.Controls.Add(this.tournamentNameValue);
+            this.Controls.Add(this.teamNameValue);
             this.Controls.Add(this.teamNameLabel);
             this.Controls.Add(this.headerLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,7 +295,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tournamentNameValue;
+        private System.Windows.Forms.TextBox teamNameValue;
         private System.Windows.Forms.Label teamNameLabel;
         private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.ComboBox selectTeamDropdown;
