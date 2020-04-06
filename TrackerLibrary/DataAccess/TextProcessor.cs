@@ -58,7 +58,6 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             File.WriteAllLines(filename.FullFilePath(), lines);
         }
 
-
         public static List<PersonModel> ConvertToPersonModel(this List<string> lines)
         {
             List<PersonModel> output = new List<PersonModel>();
@@ -78,6 +77,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 
             return output;
         }
+
         public static List<TeamModel> ConvertToTeamModel(this List<string> lines, string peopleFileName)
         {
             List<TeamModel> output = new List<TeamModel>();
@@ -98,6 +98,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 {
                     t.TeamMembers.Add(people.Where(x => x.Id == int.Parse(id)).First());
                 }
+                output.Add(t);
             }
 
             return output;

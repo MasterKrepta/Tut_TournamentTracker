@@ -77,6 +77,8 @@
     <Compile Include="Forms\TournamentViewerForm.Designer.cs">
       <DependentUpon>TournamentViewerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IPrizeRequester.cs" />
+    <Compile Include="Interfaces\ITeamRequester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CreatePrizeForm.resx">

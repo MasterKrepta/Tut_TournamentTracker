@@ -9,19 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary;
 using TrackerLibrary.Models;
+using TrackerUI.Interfaces;
 
 namespace TrackerUI
 {
+
     public partial class CreateTeamForm : Form
     {
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
+        private ITeamRequester callingForm;
 
-        public CreateTeamForm()
+        public CreateTeamForm(ITeamRequester caller)
         {
             InitializeComponent();
 
             //CreateSampleData();
+            callingForm = caller;
 
             WireUpLists();
             
@@ -132,7 +136,9 @@ namespace TrackerUI
             t.TeamName = teamNameValue.Text;
             t.TeamMembers = selectedTeamMembers;
 
-            t = GlobalConfig.Connection.CreateTeam(t);
+            GlobalConfig.Connection.CreateTeam(t);
+            callingForm.TeamComplete(t);
+            this.Close();
             //TODO if Create Team form stays open, reset it
         }
     }
