@@ -85,6 +85,55 @@ namespace TrackerLibrary.DataAccess
             }
         }
 
+        public void CreateTournament(TournamentModel model)
+        {
+            using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            {
+                SaveTournament(model, conn);
+                SaveTournamentPrizes(model, conn);
+                SaveTournamentEntries(model, conn);
+
+            }
+        }
+
+        private static void SaveTournamentEntries(TournamentModel model, IDbConnection conn)
+        {
+            foreach (var tm in model.EnteredTeams)
+            {
+                var p = new DynamicParameters();
+                p.Add("@TournamentId", model.Id);
+                p.Add("@TeamId", tm.Id);
+                p.Add("@id", 0, DbType.Int32, direction: ParameterDirection.Output);
+
+                conn.Execute("spTournamentEntries_Insert", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        private static void SaveTournamentPrizes(TournamentModel model, IDbConnection conn)
+        {
+            foreach (var pz in model.Prizes)
+            {
+                var p = new DynamicParameters();
+                p.Add("@TeamId", model.Id);
+                p.Add("@PersonId", pz.Id);
+                p.Add("@id", 0, DbType.Int32, direction: ParameterDirection.Output);
+
+                conn.Execute("spTournamentPrizes_Insert", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        private static void SaveTournament(TournamentModel model, IDbConnection conn)
+        {
+            var p = new DynamicParameters();
+            p.Add("@TournamentName", model.TournamentName);
+            p.Add("@EntryFee", model.EntryFee);
+            p.Add("@id", 0, DbType.Int32, direction: ParameterDirection.Output);
+
+            conn.Execute("spTournaments_Insert", p, commandType: CommandType.StoredProcedure);
+
+            model.Id = p.Get<int>("@id");
+        }
+
         public List<PersonModel> GetPerson_All()
         {
             List<PersonModel> output;
