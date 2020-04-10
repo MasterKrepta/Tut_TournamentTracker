@@ -21,7 +21,7 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// Matchup that this team came from
         /// </summary>
-        public MatchupEntryModel ParentMatchup { get; set; }
+        public MatchupModel ParentMatchup { get; set; }
 
     }
 }
