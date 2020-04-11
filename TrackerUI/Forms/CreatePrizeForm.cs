@@ -80,7 +80,7 @@ namespace TrackerUI
             {
                 output = false;
             }
-            if (prizePercentage >= 100)
+            if (prizePercentage > 100)
             {
                 output = false;
             }
