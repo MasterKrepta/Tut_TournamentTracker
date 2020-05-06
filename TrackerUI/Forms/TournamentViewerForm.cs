@@ -25,12 +25,13 @@ namespace TrackerUI
             InitializeComponent();
 
             tournament = tournamentModel;
-            LoadRounds();
+            
             WireUpLists();
 
             LoadFormData();
 
-            
+            LoadRounds();
+
         }
 
         private void LoadFormData()
@@ -101,6 +102,7 @@ namespace TrackerUI
         {
             if (m == null)
             {
+                MessageBox.Show("We sent a null matchup model somehow");
                 return; //TOdo do we need this?
             }
 
@@ -123,6 +125,7 @@ namespace TrackerUI
                     }
 
                 }
+
                 if (i == 1)
                 {
                     if (m.Entries[1].TeamCompeting != null)

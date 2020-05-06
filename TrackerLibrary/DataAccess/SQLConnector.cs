@@ -227,6 +227,7 @@ namespace TrackerLibrary.DataAccess
 
                     //populate teams                    
                     t.EnteredTeams = conn.Query<TeamModel>("dbo.spTeams_GetByTournament", p, commandType: CommandType.StoredProcedure).ToList();
+                    
                     foreach (var team in t.EnteredTeams)
                     {
                         p = new DynamicParameters();
@@ -244,7 +245,7 @@ namespace TrackerLibrary.DataAccess
                     foreach (var m in matchups)
                     {
                         p = new DynamicParameters();
-                        p.Add("@matchupId", t.Id);
+                        p.Add("@matchupId", m.Id);
                         
                         m.Entries = conn.Query<MatchupEntryModel>("spMatchupEntries_GetByMatchup", p, commandType: CommandType.StoredProcedure).ToList();
 
