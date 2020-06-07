@@ -97,7 +97,7 @@ namespace TrackerLibrary.DataAccess
             TournamentLogic.UpdateTournamentResults(model);
         }
 
-        //public List<TournamentModel> GetTournament_All()
+        public List<TournamentModel> GetTournament_All()
         {
             return GlobalConfig.TournamentFile
                 .FullFilePath()
