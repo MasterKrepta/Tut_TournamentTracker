@@ -240,7 +240,7 @@
             this.createTournamentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTournamentBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTournamentBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.createTournamentBtn.Location = new System.Drawing.Point(236, 560);
+            this.createTournamentBtn.Location = new System.Drawing.Point(238, 573);
             this.createTournamentBtn.Name = "createTournamentBtn";
             this.createTournamentBtn.Size = new System.Drawing.Size(548, 46);
             this.createTournamentBtn.TabIndex = 24;

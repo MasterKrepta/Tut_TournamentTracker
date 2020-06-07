@@ -12,7 +12,7 @@ namespace TrackerLibrary.DataAccess
     public class SQLConnector : IDataConnection
     {
         private const string db = "Tournaments";
-        public PersonModel CreatePerson(PersonModel model)
+        public void CreatePerson(PersonModel model)
         {
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
             {
@@ -27,7 +27,7 @@ namespace TrackerLibrary.DataAccess
 
                 model.Id = p.Get<int>("@id");
 
-                return model;
+                
             }
         }
 
@@ -36,7 +36,7 @@ namespace TrackerLibrary.DataAccess
         /// </summary>
         /// <param name="model"></param>
         /// <returns>The prize info, including the unique identifier</returns>
-        public PrizeModel CreatePrize(PrizeModel model)
+        public void CreatePrize(PrizeModel model)
         {
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
             {
@@ -51,12 +51,12 @@ namespace TrackerLibrary.DataAccess
 
                 model.Id = p.Get<int>("@id");
 
-                return model;
+                
             }
             
         }
 
-        public TeamModel CreateTeam(TeamModel model)
+        public void CreateTeam(TeamModel model)
         {
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
             {
@@ -75,13 +75,9 @@ namespace TrackerLibrary.DataAccess
                     p.Add("@PersonId", tm.Id);
 
                     conn.Execute("spTeamMembers_Insert", p, commandType: CommandType.StoredProcedure);
-
-                    
+  
                 }
 
-
-
-                return model;
             }
         }
 
@@ -93,6 +89,7 @@ namespace TrackerLibrary.DataAccess
                 SaveTournamentPrizes(model, conn);
                 SaveTournamentEntries(model, conn);
                 SaveTournamentRounds(model, conn);
+                TournamentLogic.UpdateTournamentResults(model);
             }
         }
 
