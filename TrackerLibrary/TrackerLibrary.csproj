@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\TextProcessor.cs" />
+    <Compile Include="Logic\EmailLogic.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="Interfaces\IDataConnection.cs" />

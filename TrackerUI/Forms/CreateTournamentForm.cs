@@ -132,8 +132,8 @@ namespace TrackerUI
             //create rest of the rounds
 
             GlobalConfig.Connection.CreateTournament(tm);
+            tm.AlertUsersToNewRound();
 
-            
 
 
             TournamentViewerForm frm = new TournamentViewerForm(tm);
