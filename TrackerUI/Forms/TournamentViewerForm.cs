@@ -27,12 +27,20 @@ namespace TrackerUI
 
             tournament = tournamentModel;
             
+            
             WireUpLists();
 
             LoadFormData();
 
             LoadRounds();
 
+            tournament.OnTournamentComplete += Tournament_OnTournamentComplete;
+
+        }
+
+        private void Tournament_OnTournamentComplete(object sender, DateTime e)
+        {
+            this.Close();
         }
 
         private void LoadFormData()
@@ -190,7 +198,6 @@ namespace TrackerUI
                 MessageBox.Show(errorMessage);
                 return;
             }
-            //todo refactor this
             MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
             double teamOneScore = 0;
             double teamTwoScore = 0;
